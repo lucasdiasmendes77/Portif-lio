@@ -231,3 +231,14 @@ section {
   min-width: 170px;
   text-align: center;
 }
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  header, footer, button {
+    display: none;
+  }
+}
