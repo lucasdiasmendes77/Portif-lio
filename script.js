@@ -1,21 +1,23 @@
 // Alternar tema
-const button = document.getElementById("themeToggle");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", function() {
 
-// Garantir que começa no modo escuro
-body.classList.add("dark");
+  const themeToggle = document.getElementById("themeToggle");
 
-button.addEventListener("click", () => {
-    if (body.classList.contains("dark")) {
-        body.classList.remove("dark");
-        body.classList.add("light");
-        button.textContent = "🌙 Modo Escuro";
-    } else {
-        body.classList.remove("light");
-        body.classList.add("dark");
-        button.textContent = "☀️ Modo Claro";
-    }
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      document.body.classList.toggle("light");
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("light")) {
+        themeToggle.textContent = "🌙 Modo Escuro";
+      } else {
+        themeToggle.textContent = "☀️ Modo Claro";
+      }
+    });
+  }
+
 });
+
 
 
 // Animação ao rolar
